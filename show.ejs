@@ -1,0 +1,50 @@
+<link rel="stylesheeet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="styleshet" href="rest.css">
+
+<nav class="navbar navbar-inverse bg-light fixed-top">
+	<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Movie Blog</a></li>
+      <li><a href="/blogs">Home</a></li>
+      <li><a href="/blogs/new">New Post</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/blogs">Home</a></li>
+      </ul>
+      </ul>
+	</div>
+	</div>
+</div>
+</div>
+</nav>
+
+<div class="container align-center">
+    <div class="row">
+        
+        <div style="padding-left:100px; width:40%; margin: 0 auto;"> 
+       <h3 style="text-align:center"><%= blog.title%></h3>
+       
+       <img src="<%= blog.image %>">
+    <span><%= blog.created.toDateString() %></span>
+    <p> <%= blog.body%></p>
+    <a href="/blogs/<%= blog._id%>/edit" class="btn btn-success">Edit</a>
+    <form id=delete action="/blogs/<%= blog._id%>?_method=DELETE" method="post">
+        <button class="btn btn-danger">Delete</button>
+   
+    </form>
+    </div>
+</div>
+</div>
+
+<blockquote class="blockquote"></blockquote>
+<footer class="blockquote-footer text-center><b>Developed By Anash</b></footer>

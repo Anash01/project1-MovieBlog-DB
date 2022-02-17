@@ -1,0 +1,40 @@
+<link rel="stylesheeet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<nav class="navbar navbar-inverse bg-light fixed-top">
+	<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Movie Blog</a></li>
+      <li><a href="/blogs">Home</a></li>
+      <li><a href="/blogs/new">New Post</a></li>
+      </ul>
+	</div>
+	</div>
+</div>
+</div>
+</nav>
+
+
+<h1>Index page!!</h1>
+
+<% blogs.forEach(function(blog){ %>
+    <div>
+    <h3>  <%= blog.title %> </h3> 
+    <img src="<%= blog.image %>">
+    <span><%= blog.created.toDateString() %></span>
+    <p> <%= blog.body %></p>
+    <a href="/blogs/<%= blog._id%>">Read More</a>
+    </div>
+<% }) %>
+
+<blockquote class="blockquote"></blockquote>
+<footer class="blockquote-footer text-center"><b>Developed By Anash</b></footer>
